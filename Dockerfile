@@ -3,6 +3,7 @@ FROM golang:1.19.0-alpine as build-env
 RUN mkdir /app
 WORKDIR /app
 
+
 COPY go.mod ./
 
 RUN go mod download
