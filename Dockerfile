@@ -11,12 +11,10 @@ RUN go mod download
 RUN addgroup -g 10014 choreo && \
     adduser  --disabled-password  --no-create-home --uid 10014 --ingroup choreo choreouser
 
-# Copy the Go source code into the container
 COPY docker-hello-world-manual-task .
 
 ENV CGO_ENABLED=0 GOOS=linux GOARCH=amd64
 
-# Build the binary
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -o /go/bin/app -buildvcs=false
 
 FROM alpine

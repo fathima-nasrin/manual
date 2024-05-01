@@ -6,8 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello, World!")
-	for i, arg := range os.Args[1:] {
-		fmt.Println("Arg", i, ": ", arg)
-	}
+	fmt.Println("I'm trying to manual task")
 }
